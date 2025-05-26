@@ -1,0 +1,37 @@
+fieldset {
+    border-radius: 4px;
+}
+
+
+legend {
+    color: #8C9499;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+input {
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-right: 4px;
+    font-size: 14px;
+    font-weight: 200;
+    ::placeholder {
+        color: #9AA1A6;
+        
+    }
+}
+
+button {
+    background-color: #EFF1F2;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 6px;
+    color: #656E73;
+}
+
+.input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

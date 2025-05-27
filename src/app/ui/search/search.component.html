@@ -1,0 +1,51 @@
+<input type="input" class="search" placeholder="Поисковый запрос" (click)="isSearchActive = !isSearchActive"/>
+
+@if (isSearchActive) {
+<div class="dropdown">
+    <div class="left-block">
+        <sub class="left-block__title">История</sub>
+        <ul class="list">
+            <li class="list__item">закрепить теги</li>
+            <li class="list__item">кнопка</li>
+            <li class="list__item">приложение</li>
+            <li class="list__item">форма</li>
+            <li class="list__item">текстовое поле</li>
+            <li class="list__item">выпадающий список</li>
+            <li class="list__item">выпадающий список 2</li>
+        </ul>
+        <div class="blur-bottom"></div>
+    </div>
+    <div class="right-block">
+        <app-input></app-input>
+        <div class="checkboxblock-top">
+            <div class="checkbox-wrapper">
+                <input type="checkbox" class="checkbox" />
+                <div class="checkbox-text">Я участник</div>
+            </div>
+            <div class="checkbox-wrapper">
+                <input type="checkbox" class="checkbox" />
+                <div class="checkbox-text">Строгий поиск</div>
+            </div>
+            <div class="checkbox-wrapper">
+                <input type="checkbox" class="checkbox" />
+                <div class="checkbox-text">В заголовках</div>
+            </div>     
+        </div>
+        <div class="checkboxblock-bottom-title">Только</div>
+        <div class="checkboxblock-bottom">
+            <div class="checkbox-wrapper">
+                <input type="checkbox" class="checkbox" />
+                <div class="checkbox-text">Теги</div>
+            </div>
+            <div class="checkbox-wrapper">
+                <input type="checkbox" class="checkbox" />
+                <div class="checkbox-text">Просьбы</div>
+            </div>
+            <div class="checkbox-wrapper">
+                <input type="checkbox" class="checkbox" />
+                <div class="checkbox-text">Контакты</div>
+            </div>
+        </div>
+    </div>
+</div>
+}

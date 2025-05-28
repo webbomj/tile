@@ -1,0 +1,4 @@
+<div [class]="isChecked() ? 'checkbox checked' : 'checkbox'" (pointerdown)="onCheckboxTap()">
+    <img src="/checkbox-arrow.svg" class="checkbox-arrow">
+</div>
+<span class="checkbox-text">{{text()}}</span>

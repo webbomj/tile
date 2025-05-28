@@ -1,0 +1,21 @@
+<div class="header">
+    <img src="/arrow_back.svg" class="header-arrow" (pointerdown)="onArrowTap()">
+    <input type="text" class="header-input" placeholder="Поиск">
+</div>
+<div class="content-box">
+    <app-input></app-input>
+    <div class="checkboxblock-top">
+        <app-mobile-checkbox [text]="'Я участник'"></app-mobile-checkbox>
+        <app-mobile-checkbox [text]="'В заголовках'"></app-mobile-checkbox>
+        <app-mobile-checkbox [text]="'Строгий поиск'"></app-mobile-checkbox>
+    </div>  
+    <div class="checkboxblock-bottom">
+        <span class="checkboxblock-bottom__title">Только</span>
+        <div class="chechboxblock-bottom__list">
+            <app-mobile-checkbox [text]="'Теги'"></app-mobile-checkbox>
+            <app-mobile-checkbox [text]="'Просьбы'"></app-mobile-checkbox>
+            <app-mobile-checkbox [text]="'Контакты'"></app-mobile-checkbox>
+        </div>
+    </div>
+</div>
+

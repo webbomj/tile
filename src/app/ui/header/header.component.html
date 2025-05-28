@@ -1,5 +1,12 @@
 <div class="header-left">
+    <img src="/menu.svg" class="burger">
     <img src="/logo.png" class="logo">
+    <div class="mobile-buttons">
+        <img src="/add.svg" class="button-icon">
+        <img src="/history.svg" class="button-icon">
+        <img src="/search.svg" class="button-icon" (pointerdown)="openMobileSearch()">
+        <img src="/notifications.svg" class="button-icon">
+    </div>
     <div class="list-links">
         <div class="link-wrapper">
             <img src="/link.svg" class="link-icon">
@@ -42,3 +49,7 @@
 <div class="opened-search" [@slideInOut]="searchState" #searchRef>
     <app-search [(isShowDropDown)]="isShowDropDown" ></app-search>
 </div>
+
+@if (screenSizeService.isMobile$() && mobileSearchState() === 'visible') {
+    <app-mobile-search (closeSearch)="mobileSearchState.set('hidden')"></app-mobile-search>
+}

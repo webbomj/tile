@@ -1,12 +1,14 @@
-import { Component, signal, viewChild, ElementRef } from '@angular/core';
+import { Component, signal, viewChild, ElementRef, inject } from '@angular/core';
 import { SearchComponent } from '../search/search.component';
 import {trigger, state, style, animate, transition } from '@angular/animations';
+import { ScreenSizeService } from '../../services/screen-size.service';
+import { MobileSearchComponent } from '../mobile-search/mobile-search.component';
 
 type SearchState = 'hidden' | 'visible';
 
 @Component({
   selector: 'app-header',
-  imports: [SearchComponent ],
+  imports: [SearchComponent, MobileSearchComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   animations:  [
@@ -23,8 +25,10 @@ type SearchState = 'hidden' | 'visible';
 export class HeaderComponent {
   searchState: SearchState = 'hidden'
   badgeCount = signal(32)
-  isShowDropDown = signal(false);
+  isShowDropDown = signal(false)
   inputWrapper = viewChild.required<ElementRef>('searchRef')
+  mobileSearchState = signal<SearchState>('hidden')
+  screenSizeService = inject(ScreenSizeService)
 
   openSearch(event: Event) {
     event.stopPropagation();
@@ -33,8 +37,8 @@ export class HeaderComponent {
     }
   }
   closeSearch(event: PointerEvent) {
-    const searchContainer = this.inputWrapper()?.nativeElement as HTMLElement;
-    if (!searchContainer) return;
+    const searchContainer = this.inputWrapper()?.nativeElement as HTMLElement
+    if (!searchContainer) return
 
     const target = event.target as HTMLElement
 
@@ -48,5 +52,9 @@ export class HeaderComponent {
       this.isShowDropDown.set(false)
       this.searchState = 'hidden'
     }
+  }
+
+  openMobileSearch() {
+    this.mobileSearchState.set('visible')
   }
 }

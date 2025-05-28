@@ -1,0 +1,55 @@
+<div class="header-left">
+    <img src="/menu.svg" class="burger">
+    <img src="/logo.png" class="logo">
+    <div class="mobile-buttons">
+        <img src="/add.svg" class="button-icon">
+        <img src="/history.svg" class="button-icon">
+        <img src="/search.svg" class="button-icon" (pointerdown)="openMobileSearch()">
+        <img src="/notifications.svg" class="button-icon">
+    </div>
+    <div class="list-links">
+        <div class="link-wrapper">
+            <img src="/link.svg" class="link-icon">
+            <div class="link-text">Ссылки</div>
+        </div>
+        <div class="link-wrapper">
+            <img src="/contacts.svg" class="link-icon">
+            <div class="link-text">Контакты</div>
+        </div>
+        <div class="link-wrapper">
+            <img src="/tag.svg" class="link-icon">
+            <div class="link-text">Теги</div>
+        </div>
+        <div class="link-wrapper">
+            <img src="/favorites.svg" class="link-icon">
+            <div class="link-text">Избранное</div>
+        </div>
+        <div class="link-wrapper">
+            <img src="/history.svg" class="link-icon">
+            <div class="link-text">Посещения</div>
+        </div>
+    </div>
+    <img src="/search.svg" class="button-icon button-search buttons-block" (click)="openSearch($event)">   
+</div>
+<div class="header-right">
+    <div class="header-right__left">
+        <img src="/add.svg" class="button-icon button-add">
+    </div>
+    <div class="header-right__right">
+        <div class="notification-wrapper">
+            <img src="/notifications.svg" class="button-icon button-notifications">    
+            <div class="badge">{{ badgeCount() }}</div>  
+        </div>
+        <div class="avatar">
+            <img src="/avatar.png" class="button-avatar">     
+        </div>  
+    </div>
+    
+</div>
+<div class="opened-search" [@slideInOut]="searchState" #searchRef>
+    <app-search [(isShowDropDown)]="isShowDropDown" ></app-search>
+</div>
+
+@if (screenSizeService.isMobile$() && mobileSearchState() === 'visible') {
+    <app-mobile-search (closeSearch)="mobileSearchState.set('hidden')"></app-mobile-search>
+}

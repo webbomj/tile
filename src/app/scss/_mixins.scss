@@ -1,0 +1,19 @@
+@use './variables' as vars;
+
+// === Миксины ===
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin font-standard-style {
+  font-size: vars.$font-size-base;
+  font-weight: vars.$font-weight-light;
+  color: vars.$white;
+}
+
+@mixin mobile-max {
+  @media (max-width: vars.$mobile-breakpoint) {
+    @content;
+  }
+}

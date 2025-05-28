@@ -1,0 +1,165 @@
+@use '../../scss/variables' as vars;
+@use '../../scss/mixins' as mixins;
+
+:host {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: vars.$header-height;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    border: 1px vars.$primary-color solid;
+    background-color: vars.$primary-color;
+    z-index: 1;
+}
+
+.header-left {
+    display: flex;
+    padding: 0px 0 0 18px;
+    position: relative;
+    z-index: 1;
+    @include mixins.mobile-max {
+        align-items: center;
+        padding: 0px 0 0 16px;
+    }
+}
+
+.burger {
+    display: none;
+
+    @include mixins.mobile-max {
+        display: block;
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.logo {
+    @include mixins.mobile-max {
+        margin-left: 15px;
+    }
+}
+
+.mobile-buttons {
+    display: none;
+    margin-left: 36px;
+    @include mixins.mobile-max {
+        display: flex; 
+    }
+    & img {
+        &:not(:last-child) {
+            @include mixins.mobile-max {
+                margin-right: 20px; 
+            }
+        }
+    }
+}
+
+
+
+.list-links {
+    display: flex;
+    margin-left: 54px;
+
+    @include mixins.mobile-max {
+        display: none;
+    }
+}
+
+
+.link-wrapper {
+    @include mixins.flex-center;
+    cursor: pointer;
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
+}
+
+.link-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 9px;
+}
+
+.link-text {
+    @include mixins.font-standard-style;
+}
+
+.buttons-block {
+    display: flex;
+    padding-top: 16px;
+}
+
+.button-icon {
+    width: 24px;
+    height: 24px;
+}
+
+
+.button-search {
+    margin-left: 63px;
+    margin-right: 14px;
+
+    @include mixins.mobile-max {
+        display: none;
+    }
+}
+
+.button-add {
+    margin-left: 20px;
+}
+
+.header-right {
+    @include mixins.flex-center;
+    width: 100%;
+    position: relative;
+    padding: 4px 15px 0 0;
+    z-index: 3;
+    justify-content: space-between;
+    background-color: vars.$primary-color;
+    @include mixins.mobile-max {
+        display: none;
+    }
+}
+
+.notification-wrapper {
+    @include mixins.flex-center;
+    position: relative;
+    width: 50px;
+    height: 100%;
+    justify-content: center;
+}
+
+.badge {
+    @include mixins.flex-center;
+    justify-content: center;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 21px;
+    height: 16px;
+    background-color: vars.$error-color;
+    border: 1px solid vars.$primary-color;
+    border-radius: 100px;
+    color: vars.$white;
+    font-size: 11px;
+    font-weight: vars.$font-weight-medium;
+}
+
+.avatar {
+    margin-left: 11px;
+    padding-top: 7px;
+}
+
+.opened-search {
+    position: absolute;
+    top: 2px;
+    left: 180px;
+    z-index: 1;
+}
+
+.header-right__right {
+    display: flex;
+    height: 100%;
+}

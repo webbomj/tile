@@ -1,6 +1,6 @@
-<input type="input" class="search" placeholder="Поисковый запрос" (click)="isSearchActive = !isSearchActive"/>
+<input type="input" class="search" placeholder="Поисковый запрос" (click)="isShowDropDown.set(!isShowDropDown())"/>
 
-@if (isSearchActive) {
+@if (isShowDropDown()) {
 <div class="dropdown">
     <div class="left-block">
         <sub class="left-block__title">История</sub>

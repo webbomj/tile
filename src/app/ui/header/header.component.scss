@@ -1,0 +1,118 @@
+:host {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    width: 100%;
+    height: 56px;
+    margin: 0;
+    padding: 0;
+    border: 1px #1074CC solid;
+    background-color: #1074CC;
+    z-index: 1;
+}
+
+.header-left {
+    display: flex;
+    padding: 0px 0 0 18px;
+    position: relative;
+    z-index: 1;
+}
+
+.list-links {
+    display: flex;
+    margin-left: 54px;
+}
+
+.link-wrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
+}
+
+.link-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 9px;
+}
+
+.link-text {
+    font-size: 14px;
+    font-weight: 200;
+    color: #fff;
+}
+
+.buttons-block {
+    display: flex;
+    padding-top: 16px;
+}
+
+.button-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.button-search {
+    margin-left: 63px;
+    margin-right: 14px;
+}
+
+.button-add {
+    margin-left: 20px;
+}
+
+.header-right {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 4px 15px 0 0;
+    z-index: 3;
+    background-color: #1074CC;
+}
+
+.notification-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 50px;
+    height: 100%;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 21px;
+    height: 16px;
+    background-color: #CC1910;
+    border: 1px solid #1074CC;
+    border-radius: 100px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.avatar {
+    margin-left: 11px;
+    padding-top: 7px;
+}
+
+.opened-search {
+    position: absolute;
+    top: 2px;
+    left: 180px;
+    z-index: 1;
+}
+
+.header-right__right {
+    display: flex;
+    height: 100%;
+}

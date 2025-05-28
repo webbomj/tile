@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, model } from '@angular/core';
 import { InputComponent } from '../input/input.component';
 
 @Component({
@@ -8,6 +8,5 @@ import { InputComponent } from '../input/input.component';
   styleUrl: './search.component.scss',
 })
 export class SearchComponent {
-  isSearchActive = true;
-
+  isShowDropDown = model(false)
 }
